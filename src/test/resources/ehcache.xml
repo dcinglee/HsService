@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+         updateCheck="false">
+
+    <!--&lt;!&ndash; 磁盘缓存位置 &ndash;&gt;-->
+    <!--<diskStore path="ehcache"/>-->
+
+    <!-- 默认缓存 -->
+    <defaultCache
+            eternal="false"
+            overflowToDisk="false"
+            diskPersistent="false"
+            maxElementsInMemory="100000"
+            maxElementsOnDisk="0"
+            timeToLiveSeconds="3600"
+            timeToIdleSeconds="0"
+            memoryStoreEvictionPolicy="LFU"/>
+
+    <!--&lt;!&ndash; 自定义名称‘name=userCache’缓存 &ndash;&gt;-->
+    <!--<cache name="userCache"-->
+           <!--maxElementsInMemory="1000"-->
+           <!--eternal="false"-->
+           <!--timeToIdleSeconds="3"-->
+           <!--timeToLiveSeconds="3"-->
+           <!--maxEntriesLocalDisk="10000000"-->
+           <!--overflowToDisk="false"-->
+           <!--memoryStoreEvictionPolicy="LRU"/>-->
+
+</ehcache>

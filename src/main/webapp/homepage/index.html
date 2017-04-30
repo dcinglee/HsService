@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="Lee">
+    <link rel="shortcut icon" href="../icons/page-head-icon/favicon.ico" type="image/png">
+
+    <title>客户端首页</title>
+
+    <!--common-->
+    <link href="statics/css/style.css" rel="stylesheet">
+    <link href="statics/css/style-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="statics/js/html5shiv.js"></script>
+    <script src="statics/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+            <a href="index.html"><img src="statics/images/logo.png" alt=""></a>
+        </div>
+
+        <div class="logo-icon text-center">
+            <a href="index.html"><img src="statics/images/logo_icon.png" alt=""></a>
+        </div>
+        <!--logo and iconic logo end-->
+
+        <div id="sidebar" class="left-side-inner">
+
+            <!-- visible to small devices only -->
+            <div class="visible-xs hidden-sm hidden-md hidden-lg">
+                <div class="media logged-user">
+                    <img alt="" src="statics/images/photos/user-avatar.png" class="media-object">
+                    <div class="media-body">
+                        <h4><a href="#">cinging</a></h4>
+                        <span>"星星之火，可以燎原！"</span>
+                    </div>
+                </div>
+
+                <h5 class="left-nav-title">个人信息</h5>
+                <ul class="nav nav-pills nav-stacked custom-nav">
+                    <li><a href="#"><i class="fa fa-user"></i> <span>详细资料</span></a></li>
+                    <li><a href="#"><i class="fa fa-cog"></i> <span>设置</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out"></i> <span>退出</span></a></li>
+                </ul>
+            </div>
+
+            <!--sidebar nav start-->
+            <ul id="nav" class="nav nav-pills nav-stacked custom-nav">
+                <!-- <li class="active"><a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a></li>
+
+                 <li class="menu-list"><a href=""><i class="fa fa-laptop"></i> <span>校园资讯</span></a>
+                     <ul class="sub-menu-list">
+                         <li><a href="campusInformation/newsTable.html"> 校园新闻</a></li>
+                         <li><a href="campusInformation/noticeTable.html"> 最新通知</a></li>
+                         <li><a href="campusInformation/activeTable.html"> 社团活动</a></li>
+                     </ul>
+                 </li>
+
+                 <li class="menu-list"><a href=""><i class="fa fa-book"></i> <span>校园学习</span></a>
+                     <ul class="sub-menu-list">
+                         <li><a href="campusStudy/courseTable.html"> 课表查询</a></li>
+                         <li><a href="campusStudy/scoreTable.html"> 成绩查询</a></li>
+                         <li><a href="campusStudy/bookTable.html"> 图书借阅查询</a></li>
+                         <li><a href="campusStudy/employmentTable.html"> 实习就业查询</a></li>
+                     </ul>
+                 </li>
+
+                 <li class="menu-list"><a href=""><i class="fa fa-cogs"></i> <span>校园生活</span></a>
+                     <ul class="sub-menu-list">
+                         <li><a href="campusLife/oneCardTable.html"> 一卡通查询</a></li>
+                         <li><a href="campusLife/lostThing.html"> 失物招领</a></li>
+                         <li><a href="campusLife/courierTable.html"> 快递查询</a></li>
+                     </ul>
+                 </li>-->
+            </ul>
+            <!--sidebar nav end-->
+        </div>
+    </div>
+    <!-- left side end-->
+
+    <!-- main content start-->
+    <div class="main-content">
+
+        <!-- header section start-->
+        <div class="header-section">
+
+            <!--toggle button start-->
+            <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+            <!--toggle button end-->
+
+            <!--notification menu start -->
+            <div class="menu-right">
+                <ul class="notification-menu">
+                    <li>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            <img src="statics/images/photos/user-avatar.png" alt=""/>
+                            Dcing Lee
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                            <li><a href="#"><i class="fa fa-user"></i> 详细资料</a></li>
+                            <li><a href="#"><i class="fa fa-cog"></i> 设置</a></li>
+                            <li><a href="#"><i class="fa fa-sign-out"></i> 退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--notification menu end -->
+        </div>
+        <!-- header section end-->
+
+        <!--body wrapper start-->
+
+        <div class="wrapper">
+            <div class="row">
+                <iframe id="mainFrame" name="mainFrame" scrolling="no" src=""
+                        frameborder="0" style="padding: 0px; width: 100%; height: 1000px;"></iframe>
+                <!--body wrapper end-->
+
+            </div>
+        </div>
+        <!-- main content end-->
+
+    </div>
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="statics/js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+    startInit('mainFrame', 560);
+</script>
+
+<!--动态加载左侧菜单-->
+<script>
+    $(document).ready(function () {
+        getAdminMenu();
+    });
+    $(document).on('click', '.menu-list', function () {
+        $(this).toggleClass("nav-active");
+    });
+
+    function getAdminMenu() {
+        $.ajax({
+            type: "POST",
+            url: "../admin/getAdminMenu",
+            data: "",
+            dataType: 'json',
+            beforeSend: function () {
+            },
+            success: function (data) {
+                if (data.code == 1) {
+                    var json = data;
+                    var this_data = eval(json.data);
+                    if (this_data.length > 0) {
+
+                        $("#sidebar #nav").empty();
+
+                        for (i = 0; i < this_data.length; i++) {
+                            if (this_data[i].subMenus != null) {
+                                var tmpStr = "" +
+                                        "<li class='menu-list'>" +
+                                        "<a href='javascript:void(0)'>" +
+                                        "<i class='fa fa-book'></i>" +
+                                        "<span>" + this_data[i].name + "</span>" +
+                                        "</a>" +
+                                        "<ul class='sub-menu-list'>";
+                                for (j = 0; j < this_data[i].subMenus.length; j++) {
+                                    if (this_data[i].subMenus[j].menuUrl != null) {
+                                        this_data[i].subMenus[j].menuUrl = this_data[i].subMenus[j].menuUrl.replace(new RegExp("\\\\", "gm"), "\\\\");
+                                    }
+                                    tmpStr = tmpStr + '<li><a target="mainFrame" href=' + "../homepage" + this_data[i].subMenus[j].menuUrl + '>' + this_data[i].subMenus[j].name + '</a></li>';
+                                }
+                                tmpStr = tmpStr + "</ul></li>";
+                                $("#sidebar #nav").append(tmpStr);
+                            } else {
+                                if (this_data[i].menuUrl == "") {
+                                    $("#sidebar #nav").append('' +
+                                            '<li class="active">' +
+                                            '<a href="index.html">' +
+                                            '<i class="fa fa-book"></i>' +
+                                            '<span>' + this_data[i].name + '</span>' +
+                                            '</a>' +
+                                            '</li>');
+                                } else {
+                                    if (this_data[i].menuUrl != null) {
+                                        this_data[i].menuUrl = this_data[i].menuUrl.replace(new RegExp("\\\\", "gm"), "\\\\");
+                                    }
+                                    $("#sidebar #nav").append('' +
+                                            '<li class="menu-list">' +
+                                            '<a target="mainFrame" href=' + "../homepage" + this_data[i].subMenus[j].menuUrl + '>' +
+                                            '<i class="fa fa-book"></i>' +
+                                            '<span>' + this_data[i].name + '</span>' +
+                                            '</a>' +
+                                            '</li>');
+                                }
+
+                            }
+
+                        }
+                    } else {
+                        alert("没有菜单数据！");
+                    }
+                } else {
+                    window.location.href = "../login.html";
+
+                }
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
